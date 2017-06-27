@@ -6,11 +6,37 @@
 #include <algorithm>
 #include <iostream>
 
+#include "Recursion.h"
 #include "gtest/gtest.h"
 #include "ArrayQueue.h"
 #include "MatchBracket.h"
 #include "ArrayPairSum.h"
 #include "MyBst.h"
+
+class RecursionTest : public ::testing::Test {
+};
+
+TEST_F(RecursionTest, FibPowTest) {
+	EXPECT_EQ(1U, recursive_fib(1));
+	EXPECT_EQ(1U, recursive_fib(2));
+	EXPECT_EQ(2U, recursive_fib(3));
+	EXPECT_EQ(5U, recursive_fib(5));
+	EXPECT_EQ(8U, recursive_fib(6));
+
+	EXPECT_EQ(1U, iterative_fib(1));
+	EXPECT_EQ(1U, iterative_fib(2));
+	EXPECT_EQ(2U, iterative_fib(3));
+	EXPECT_EQ(5U, iterative_fib(5));
+	EXPECT_EQ(8U, iterative_fib(6));
+
+    EXPECT_EQ(1, recursive_pow(1, 4)); 
+    EXPECT_EQ(1, recursive_pow(2, 0)); 
+    EXPECT_EQ(1, recursive_pow(1, 0)); 
+    EXPECT_EQ(0, recursive_pow(0, 4)); 
+    EXPECT_EQ(81, recursive_pow(3, 4)); 
+    EXPECT_EQ(1024, recursive_pow(2, 10)); 
+    EXPECT_EQ(125, recursive_pow(5, 3)); 
+}
 
 // The fixture for testing ArrayQueue classes.
 class ArrayQueueTest : public ::testing::Test {
@@ -117,5 +143,5 @@ TEST_F(MyBstTest, BasicBstTest) {
     bst.toDLL();
     bst.clear();
     EXPECT_EQ(0U, bst.size());
-    std::cout << "here fine " << std::endl;
 }
+

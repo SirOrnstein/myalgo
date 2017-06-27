@@ -6,7 +6,7 @@ PWD:=$(shell /bin/pwd)
 GCC=g++
 CXXFLAGS=-std=c++0x -Wall -fPIC -ggdb -O2
 
-HEADERS=ArrayQueue.h MatchBracket.h ArrayPairSum.h MyBst.h
+HEADERS=ArrayQueue.h MatchBracket.h ArrayPairSum.h MyBst.h Recursion.h
 CPPFILES=ArrayQueue.cpp MatchBracket.cpp MyBst.cpp
 OBJS=$(patsubst %.cpp,%.o,$(wildcard $(CPPFILES)))
 
